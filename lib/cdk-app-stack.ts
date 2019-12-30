@@ -5,7 +5,7 @@ import kms = require('@aws-cdk/aws-kms');
 export class CdkAppStack extends Stack {
   constructor(scope: App, id: string, props?: StackProps) {
     super(scope, id, props);
-    const s3cmk = kms.Key.fromKeyArn(this, 'cmk', 'replace with your customer managed CMK ARN')
+    const s3cmk = kms.Key.fromKeyArn(this, 'cmk', '<replace with your customer managed CMK ARN>')
     new s3.Bucket(this, 'cdkBucket', {
       versioned: true,
       encryption: s3.BucketEncryption.KMS,
